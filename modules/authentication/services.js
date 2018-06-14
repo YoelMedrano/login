@@ -22,9 +22,10 @@ angular.module('Authentication')
 
             // Use this for real authentication
              //----------------------------------------------
-            $http.post( "https://proyectois.herokuapp.com/account/login", { email: email, password: password })
+            var response = { email : email , password : password };
+            $http.post( "https://proyectois.herokuapp.com/account/login", response)
                 .success(function (response) {
-             if(response.success) {
+             if(!response.success) {
                     response.message = 'Email o Contraseña es incorrecto';
                 }
              callback(response);
