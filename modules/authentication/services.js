@@ -5,7 +5,7 @@ angular.module('Authentication')
 .factory('AuthenticationService',
     ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
     function (Base64, $http, $cookieStore, $rootScope, $timeout) {
-        var service = "https://proyectois.herokuapp.com";
+        var service = {};
 
         service.Login = function (email, password, callback) {
 
@@ -22,7 +22,7 @@ angular.module('Authentication')
 
             // Use this for real authentication
              //----------------------------------------------
-            $http.post(service +'/account/login', { email: email, password: password })
+            $http.post( 'https://proyectois.herokuapp.com/account/login', { email: email, password: password })
                 .success(function (response) {
                     callback(response);
               });
