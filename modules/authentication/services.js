@@ -22,7 +22,7 @@ angular.module('Authentication')
 
             // Use this for real authentication
              //----------------------------------------------
-            $http.post( 'https://proyectois.herokuapp.com/account/login', { email: email, password: password })
+            $http.post( "https://proyectois.herokuapp.com/account/login", { email: email, password: password })
                 .success(function (response) {
                     callback(response);
               });
