@@ -25,10 +25,9 @@ angular.module('Authentication')
             
              $http.post( 'https://proyectois.herokuapp.com/account/login', {email : email , password : password})
               .success(function(response){
-              response.message = 'Ha sido logueado';
               
                callback(response);
-            });
+            },1000);
             
          
 
