@@ -23,14 +23,12 @@ angular.module('Authentication')
             // Use this for real authentication
              //----------------------------------------------
             
-               // .success(function (response) {
-             $timeout(function(){
-             var response = {success: $http.post( "https://proyectois.herokuapp.com/account/login", [email : email , password : password])};
-             if(!response.success) {
-                    response.message = 'Email o Contraseña es incorrecto';
-                }
-             callback(response);
-              },1000);
+             $http.post( 'https://proyectois.herokuapp.com/account/login', {email : email , password : password})
+              .success(function(response){
+                console.log(response);
+            });
+            
+         
 
         };
  
