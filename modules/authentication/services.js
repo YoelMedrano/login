@@ -25,7 +25,7 @@ angular.module('Authentication')
             
                // .success(function (response) {
              $timeout(function(){
-             var response = {success: $http.post( "https://proyectois.herokuapp.com/account/login", {email : email , password : password})};
+             var response = {success: $http.post( "https://proyectois.herokuapp.com/account/login", [email : email , password : password])};
              if(!response.success) {
                     response.message = 'Email o Contraseña es incorrecto';
                 }
