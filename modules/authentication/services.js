@@ -25,7 +25,7 @@ angular.module('Authentication')
             
              $http.post( 'https://proyectois.herokuapp.com/account/login', {email : email , password : password})
               .success(function(response){
-              if(!response.success){
+              if(!response){
               response.message = 'Username or password is incorrect';
               }
                callback(response);
